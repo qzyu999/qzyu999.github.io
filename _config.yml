@@ -22,8 +22,8 @@ title: Jared's Website
 email: qzyu999@gmail.com
 description: # >- # this means to ignore newlines until "baseurl:"
   A personal website for Jared Yu to share his experience and interests with others.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/webpage" # the subpath of your site, e.g. /blog
+url: "https://qzyu999.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: qzyu999
 github_username:  qzyu999
 
