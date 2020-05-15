@@ -20,49 +20,18 @@
 
 title: Jared's Website
 email: qzyu999@gmail.com
-description: A personal website for sharing interests and experiences.
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "https://qzyu999.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+description: # >- # this means to ignore newlines until "baseurl:"
+  A personal website for Jared Yu to share his experience and interests with others.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: qzyu999
 github_username:  qzyu999
-
-# Set a path/url to a logo that will be displayed instead of the title
-#logo: "/assets/images/just-the-docs.png"
-
-# Enable or disable the site search
-search_enabled: true
-
-# Set the search token separator for hyphenated-word search:
-search_tokenizer_separator: /[\s/]+/
-
-# Enable or disable heading anchors
-heading_anchors: true
-
-# Aux links for the upper right navigation
-aux_links:
-  "LinkedIn":
-    - "//www.linkedin.com/in/jaredvyu/"
-
-# Color scheme currently only supports "dark" or nil (default)
-color_scheme: nil
-
-# Google Analytics Tracking (optional)
-# e.g, UA-1234567-89
-# ga_tracking: UA-2709176-10
 
 # Build settings
 # theme: minima
 remote_theme: pmarsceill/just-the-docs
 plugins:
   - jekyll-feed
-
-compress_html:
-  clippings: all
-  comments: all
-  endings: all
-  startings: []
-  blanklines: false
-  profile: false
 
 # Exclude from processing.
 # The following items will not be processed, by default.
