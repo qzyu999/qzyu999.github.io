@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Machine Learning
-nav_order: 3
 parent: Archives
+nav_order: 3
+has_children: true
 permalink: /archives/machine-learning/
 has_toc: true
 ---

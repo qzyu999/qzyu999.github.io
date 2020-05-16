@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Statistics
-nav_order: 1
 parent: Archives
+nav_order: 1
+has_children: true
 permalink: /archives/statistics/
 has_toc: true
 ---

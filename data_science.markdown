@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Data Science
-nav_order: 2
 parent: Archives
+nav_order: 2
+has_children: true
 permalink: /archives/data-science/
 has_toc: true
 ---
