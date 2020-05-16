@@ -4,9 +4,9 @@ title: Archives
 nav_order: 3
 has_children: true
 permalink: /archives/
+has_toc: true
 ---
 
-# UI Components
+# Archives
 
-To make it as easy as possible to write documentation in plain Markdown, most UI components are styled using default Markdown elements with few additional CSS classes needed.
-{: .fs-6 .fw-300 }
+An archive for knowledge related to the work Jared does that has been acquired both inside and outside of academics.
