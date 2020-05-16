@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-nav_order: 3
+nav_order: 2
 permalink: /about/
 # Reference: https://www.thebalancecareers.com/how-to-write-about-me-page-examples-4142367
 ---
