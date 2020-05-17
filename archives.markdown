@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Archives
-nav_order: 3
+nav_order: 4
 has_children: true
 permalink: /archives/
 has_toc: true
