@@ -13,4 +13,7 @@ permalink: /
 
 This GitHub page serves as Jared's blog, a place to display his portfolio of projects, and as a quick reference for knowledge accumulated over time.
 
-![shenzhen-civic-center](C:/Users/qizhe/Desktop/GitHub/github_website/qzyu999.github.io/assets/img){:class="img-responsive"}
+<figure>
+  <img src="{{site.url}}/assets/img/shenzhen.JPG" alt="Shenzhen, China"/>
+  <figcaption>Civic Center (Shenzhen, China)</figcaption>
+</figure>
