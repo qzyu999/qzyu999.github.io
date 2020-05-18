@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-nav_order: 7
+nav_order: 6
 permalink: /about/
 # Reference: https://www.thebalancecareers.com/how-to-write-about-me-page-examples-4142367
 ---
@@ -15,4 +15,4 @@ His determination to solve such problems can be seen in the example of a feedfor
 
 Another example of his passion for understanding the basic truths within a problem is in a presentation on Kernel Density Estimation (K.D.E.). The concept of K.D.E. is simple enough that it can be understood as a continuous form of a histogram, but a kernel function is included to help estimate the true density of a variable at any given point. The interesting portion of this method comes from deriving the closed-form solution for a seemingly simple task. With his experience in statistics as an undergraduate, he was able to make the objective of calculating complex cross terms for two Gaussian densities into a single straightforward step. The feedback from his peers in this presentation were positive, calling it a "gold standard" and more helpful than anything else found on YouTube.
 
-Jared is seeking internship opportunities as he continues on the path of completing his M.S. in Data Science. Afterwards, he will be interested in any role related to data analytics (e.g., data science, business analysis). Reach out to qzyu999@gmail.com to connect!
+Jared is seeking internship opportunities as he continues on the path of completing his M.S. in Data Science. Afterwards, he will be interested in any role related to data analytics (e.g., data science, business analysis, etc.). Reach out to <a href="{{ site.data.social-media.email.href }}{{ site.data.social-media.email.id }}" title="Email me">qzyu999@gmail.com</a> to connect!
