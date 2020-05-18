@@ -53,7 +53,7 @@ youtube:
   fa-icon: 'fa-youtube fa-2x'
 
 website:
-  id: 'yuqizheng'
+  id: ''
   href: 'https://yuqizheng.com/'
   title: 'Website'
   fa-icon: 'fa-wordpress fa-2x'
