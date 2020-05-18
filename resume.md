@@ -7,4 +7,5 @@ permalink: /resume/
 ---
 # Resume
 
+redirect_to: https://qzyu999.github.io/Resume.pdf
 [Link to resume](https://qzyu999.github.io/Resume.pdf){:target="_blank"}
