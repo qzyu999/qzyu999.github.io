@@ -6,6 +6,9 @@ layout: table_wrappers
 
 <html lang="{{ site.lang | default: "en-US" }}">
 {% include head.html %}
+<head>
+  <script src="https://kit.fontawesome.com/27cd53a23e.js" crossorigin="anonymous"></script>
+</head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="link" viewBox="0 0 16 16">
@@ -23,9 +26,10 @@ layout: table_wrappers
 
       <div class="navigation main-nav js-main-nav">
         {% include nav.html %}
-      </div>
 
-      {% include social-media-links.html %}
+        {% include social-media-links.html %}
+        ....
+      </div>
 
       <footer class="site-footer">
         <p class="text-small text-grey-dk-000 mb-4">This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</p>
