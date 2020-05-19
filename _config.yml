@@ -40,6 +40,8 @@ collections:
   portfolio:
     output: true
     sort_by: date
+  featured_portfolio:
+    output: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
