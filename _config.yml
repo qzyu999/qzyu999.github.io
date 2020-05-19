@@ -38,7 +38,8 @@ include: ['_pages'] # Reference: https://zeph.co/jekyll-pages-directory
 
 collections:
   staff_members:
-    people: true
+    output: true
+  portfolio:
     output: true
 
 # Exclude from processing.
