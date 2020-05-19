@@ -2,7 +2,7 @@
 layout: default
 name: Feedforward Neural Network
 date: 2019-12-17
-context: Computational Statistics, JHU
+context: Algorithms for Data Science, JHU
 toc: true
 toc_sticky: true
 toc_label: "Table of Contents"
