@@ -37,8 +37,6 @@ plugins:
 include: ['_pages'] # Reference: https://zeph.co/jekyll-pages-directory
 
 collections:
-  staff_members:
-    output: true
   portfolio:
     output: true
 
