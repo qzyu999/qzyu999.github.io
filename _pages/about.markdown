@@ -7,6 +7,8 @@ permalink: /about/
 ---
 # About
 
+<div style="text-align: center"><img src="/assets/img/self-photo.jpg" width="100" /></div>
+
 Jared Yu is a graduate student studying for an online M.S. in Data Science at Johns Hopkins University. His background is a B.S. in Statistics from the University of California, Davis. The expected date of graduation is around May 2021.
 
 Jared is driven to discover the insights into problems that are important for them to be solved. By working hard to break problems down into their component pieces, it becomes possible for him to gain enough clarity to the point that a vision of the solution can begin to appear. This difficult struggle to know why a problem exists and how it can be fixed is what brings joy and satisfaction to his work.
