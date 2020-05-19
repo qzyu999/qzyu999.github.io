@@ -41,8 +41,11 @@ collections:
     output: true
     sort_by: date
   featured_portfolio:
+    order:
+      - _featured_portfolio/2019-12-17-feedforward.md
+      - _featured_portfolio/2020-05-19-kde.md
+      - _featured_portfolio/2018-12-sf-fire.md
     output: true
-    #order: date
 
 # Exclude from processing.
 # The following items will not be processed, by default.
