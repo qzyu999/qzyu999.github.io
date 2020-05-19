@@ -2,52 +2,52 @@ email:
   id: 'qzyu999@gmail.com'
   href: 'mailto:'
   title: 'Email'
-  fa-icon: 'fa-envelope-square fa-2x'
+  fa-icon: 'fas fa-envelope-square fa-2x'
 
 github:
   id: 'qzyu999'
   href: 'https://github.com/'
   title: 'GitHub'
-  fa-icon: 'fa-github-square fa-2x'
+  fa-icon: 'fa fa-github-square fa-2x'
 
-#kaggle:
-#  id: 'yuqizheng'
-#  href: 'https://www.kaggle.com/'
-#  title: 'kaggle'
-#  fa-icon: 'fa-kaggle fa-2x'
+kaggle:
+  id: 'yuqizheng'
+  href: 'https://www.kaggle.com/'
+  title: 'kaggle'
+  fa-icon: 'fab fa-kaggle fa-2x'
 
 linkedin:
   id: 'jaredvyu'
   href: 'https://www.linkedin.com/in/'
   title: 'LinkedIn'
-  fa-icon: 'fa-linkedin-square fa-2x'
+  fa-icon: 'fa fa-linkedin-square fa-2x'
 
 facebook:
   id: 'yqz09'
   href: 'https://www.facebook.com/'
   title: 'Facebook'
-  fa-icon: 'fa-facebook-square fa-2x'
+  fa-icon: 'fa fa-facebook-square fa-2x'
 
 twitter:
   id: 'qzyu999'
   href: 'https://www.twitter.com/'
   title: 'Twitter'
-  fa-icon: 'fa-twitter-square fa-2x'
+  fa-icon: 'fa fa-twitter-square fa-2x'
 
 instagram:
   id: 'yqz09'
   href: 'https://instagram.com/'
   title: 'Instagram'
-  fa-icon: 'fa-instagram fa-2x'
+  fa-icon: 'fa fa-instagram fa-2x'
 
 website:
   id: ''
   href: 'https://yuqizheng.com/'
   title: 'Website'
-  fa-icon: 'fa-wordpress fa-2x'
+  fa-icon: 'fab fa-wordpress-simple fa-2x'
 
 rss:
   id: '/feed.xml'
   href:
   title: 'RSS'
-  fa-icon: 'fa-rss-square fa-2x'
+  fa-icon: 'fas fa-rss-square fa-2x'
