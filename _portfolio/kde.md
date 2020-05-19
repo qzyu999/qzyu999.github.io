@@ -45,7 +45,7 @@ The focus of this project is on the topic of ‘Density Estimation.’ For stude
 Below in Figure 1 on the left is a simple frequency histogram of the waiting times for Old Faithful based on the default dataset in R called faithful (this seems to be a common example, referenced in multiple sources for K.D.E.). On the $$x$$-axis are the minutes between eruptions, and it ranges from $$40$$ to $$100$$. This representation of count data is a rather standard way to analyze quantitative variables within a dataset. On the right of Figure 1 is the same data, however changed into a density histogram where the $$y$$-axis reflects the proportions of data falling along certain ranges of the $$x$$-axis instead of the frequency.
 
 
-```
+```R
 ### Fig. 1
 # Compare frequency and density histograms
 par(mfrow = c(1,2))
@@ -57,7 +57,7 @@ lines(density(faithful$$waiting))
 dev.off()
 ```
 
-![image.png](attachment:image.png)
+![Fig 1](https://i.imgur.com/3LSQPh2.jpg)
 
 *Figure 1 A frequency histogram on the left and a density histogram on the right that is fitted with the density function in R.*
 
@@ -75,7 +75,7 @@ Within the field of statistics and along with this course, the technique is call
 The famous statistician Karl Pearson first introduced the histogram in 1891. Histograms (as seen in Figure 1) are the first types of density estimation that have been made available. They divide data into ranges as bins and the height of the bins help to determine the frequency of data within those ranges. They’re like bar charts which came before, but instead of suiting categorical variables they work well with continuous variables. Furthermore, bar charts generally will have gaps between the bars. The differences between the two can be seen below in Figure 2.
 
 
-![image.png](attachment:image.png)
+![Fig 2](https://i.imgur.com/xsCDZFa.jpg)
 
 *Figure 2 Comparison between Bar Chart and Histogram. (Source: mathisfun.com)*
 
@@ -92,7 +92,7 @@ Here $$x_0$$ is the origin (for example in Figure 1 $$x_0=100$$), $$h$$ is the b
 
 Although helpful when doing exploratory data analysis on a variable, histograms have problems that are inherent in how they’re designed. An example is below in Figure 3 where the same data for Old Faithful is shown again. On the left-hand side is the same as the left-hand side part of Figure 1. On the right-hand side however is when the number of break points is set to 20. The total number of bins is 27, which is not the same as 20 bins like in the argument. The argument of works hist(breaks=) such that it’s required to input a vector of break points for the exact intervals of each of the bins (this approach is more ad-hoc and a more elaborate approach will be shown later). However, simply inputting a single integer performs a similar task that does the job also.
 
-```
+```R
 ### Fig. 3
 # Compare density histograms for different number of bins
 par(mfrow = c(1,2))
@@ -103,7 +103,7 @@ hist(faithful$waiting, main = 'Frequency Histogram of Waiting Times Between Erup
 dev.off()
 ```
 
-![image.png](attachment:image.png)
+![Fig 3](https://i.imgur.com/n6ByZaq.jpg)
 
 *Figure 3 The histogram on the left is the same as Fig. 1 on the left and on the right the number of breakpoints is increased to 20.*
 
@@ -115,7 +115,7 @@ The prevalence of such issues makes it such that it’s worthwhile to investigat
 ## 4. Kernel Density Estimation (K.D.E.)
 An issue with utilizing K.D.E. goes back to a problem with histograms. The K.D.E. curve that is applied over the histogram in Figure 1 isn’t always so simple to fit. The fact that histograms have parameters related to the number of bins means that it’s already up to the researcher to determine subjectively an appropriate number of bins before fitting a K.D.E. curve. The issue then is that the curve may fit nicely for certain histograms while appear to fit poorly for other histograms with more or fewer bins. An example of this can be seen below in Figure 4. The data is the natural logarithm of the dataset ‘F12.txt.’ The grid contains histograms for varying $$m$$ number of bins where $$m=10, 20,\cdots, 60$$ (Note: Here, the variable $$m$$ coincides with the number of bins where before it had come from the formula from Silverman’s paper). To do this, it’s necessary to calculate the individual break points for the bins as a function of the range of the dataset and the parameter m.
 
-```
+```R
 ### Fig. 4
 ### The hist_est() function plots a histogram after separating the
 ### data into m intervals.
@@ -173,7 +173,7 @@ for (i in m_vec) {
 dev.off()
 ```
 
-![image.png](attachment:image.png)
+![Fig 4](https://i.imgur.com/pQpmFep.jpg)
 
 *Figure 4 A grid of six histogram plots with varying bin sizes ($$m=10, 20, \cdots, 60$$).*
 
@@ -201,7 +201,7 @@ A quick note to be made also is that K.D.E. isn’t exclusively for the purpose 
 Before going straight into the mathematical formula for K.D.E., it will first be stressed the difference between the binned histogram and the density estimate $$\hat{f}(x)$$. In Figure 5 below the histogram estimator is plotted as a black line that looks like a stepwise function. This line is the horizontal portion of the histograms that are normally seen. The vertical lines that are added to make them appear as bins is done for other reasons such as making it easier to visualize the distinct intervals separating the range of values. In this graph, it’s clearer to see how the histogram estimate is more like the K.D.E. estimate in that they are both estimating the underlying unknown p.d.f. of the data.
 
 
-```
+```R
 ### Fig. 5
 ### The hist_est2() function provides the estimated probability based off
 ### the histogram estimate of the data. This is different
@@ -257,7 +257,7 @@ dev.off()
 
 ```
 
-![image.png](attachment:image.png)
+![Fig 5](https://i.imgur.com/MeGfnTL.jpg)
 
 *Figure 5 The horizontal portions of the histogram (solid, black line) overlaid with K.D.E. curve (dashed, red line).*
 
@@ -279,14 +279,14 @@ The function is taking an average of the difference of $$x$$ and all the observa
 In the textbook by Givens and Hoeting is an excellent example illustrating how the K.D.E. function works. The picture below in Figure 6 comes from the textbook by Givens and Hoeting on page 328 in Figure 10.1 (of the textbook). The image shows how given a dataset with four points, a kernel is applied to each of them and their combined average make up the overall K.D.E. curve.
 
 
-![image.png](attachment:image.png)
+![Fig 6](https://i.imgur.com/RgzBxYs.jpg)
 
 *Figure 6 The same Figure 10.1 used on p.328 of the Givens and Hoeting textbook that illustrates how the overall K.D.E. is calculated from individual kernels applied to each observation.*
 
 The next step is to find a systematic way to choose the parameters of bandwidth and the kernel function. To do so in a systematic manner means that it’s important to look at these two values in terms of some sort of optimization process. Given these two parameters, the one that has the greater importance is the bandwidth. Below in Figure 7 is an example of different kernels on the left and different bandwidths on the right. Both graphs contain a histogram with $$m=40$$ bins. On the left the K.D.E. curves are created by the Uniform, Epanechnikov, and Triweight kernel functions with the Sheather-Jones bandwidth (the optimal bandwidth which is explained later). On the right the K.D.E. curves are created with the standard normal kernel and varying bandwidths of: $$0.202281$$ (Sheather-Jones), $$1.5$$, and $$0.05$$. It’s apparent that the bandwidths will have a much greater effect on how different the corresponding output is.
 
 
-```
+```R
 ### Fig. 7
 normal <- function(z) { # Normal kernel
   dnorm(z)
@@ -374,7 +374,7 @@ legend("topleft", legend = c('Sheather-Jones', '1.5', '0.05'),
 dev.off()
 ```
 
-![image.png](attachment:image.png)
+![Fig 7](https://i.imgur.com/edyRZtV.jpg)
 
 *Figure 7 The left plot shows a histogram ($$m=40$$) overlaid with three different kernels all with the same bandwidth (0.202281 from the Sheather-Jones fit). The right plot shows the same histogram with three K.D.E. curves from a Normal kernel and three different bandwidths (Sheather-Jones with 0.202281, 1.5, and 0.05).*
 
@@ -562,7 +562,7 @@ $$
 \end{array}
 $$
 
-```
+```R
 ### Fig. 8
 triangle <- function(z) { # Triangle kernel
   ifelse(abs(z) < 1, 1 - abs(z), 0)
@@ -587,7 +587,7 @@ legend("topleft", legend = c('Uniform', 'Normal', 'Epanechnikov',
 dev.off()
 ```
 
-![image.png](attachment:image.png)
+![Fig 8](https://i.imgur.com/Oq6XUVY.jpg)
 
 *Figure 8 Plot showing the different kernel functions.*
 
@@ -621,7 +621,7 @@ where $$\delta (K)=\left(R(K)/\sigma_K^4\right)^{1/5}$$ for any kernel function 
 
 
 
-```
+```R
 ### Fig. 9
 ### The scale_bandwidth() function will scale the bandwidth
 ### for one kernel and bandwidth combination (K) to another
@@ -673,7 +673,7 @@ legend("topleft", legend = c('Normal','Uniform', 'Epanechnikov', 'Triweight'),
 dev.off()
 ```
 
-![image.png](attachment:image.png)
+![Fig 9](https://i.imgur.com/ZUiScX7.jpg)
 
 *Figure 9 The graph on the left-hand side is the same as the left-hand side graph of Figure 7. On the right-hand side is the same graph except that the bandwidths have been scaled to match the original Sheather-Jones bandwidth from a Normal kernel.*
 
@@ -720,7 +720,7 @@ The first dataset to be examined comes from the UCI Machine Learning database, b
 
 Below in Figure 13 is a grid of the default histograms and K.D.E. curves for each of the variables in the dataset. A more thorough and perhaps the ideal methodology would be to analyze each of the variables carefully, going through the process of picking a suitable number of histogram bins and fitting a pair of kernel functions and bandwidths. In this case, since only one variable will be fully explored, the idea was to search for a variable that seems like it’d benefit from K.D.E. In other words, a variable whose histogram and K.D.E. combination seem to imply that an apparently typical distribution in truth has subtle characteristics that could be of interest to researchers.
 
-```
+```R
 ### Computational Piece
 ### Dataset 1: Diabetes
 diabetes <- read.csv('diabetes.csv') # Load data
@@ -751,7 +751,7 @@ dev.off()
 
 *Figure 13 Grid of default histograms and K.D.E. curves generated in RStudio for all nine variables in the diabetes dataset.*
 
-```
+```R
 ### Fig. 16
 ### The UCV function calculates the unbiased cross-validation
 ### value for a variable given a bandwidth. It calculates the
@@ -800,7 +800,7 @@ dev.off()
 ### 1. Determine a suitable number of bins for a starting histogram.
 The chosen variable is the Age of the observation. This variable indicates the age in years of the patient. Below in Figure 14 is a side-by-side of the default histogram and K.D.E. curve on the left-hand side (i.e., using hist() and density() in R) and a custom histogram that has $$m=32$$ bins (while still using the default K.D.E. in R). The methodology in choosing the number of bins was to plot $$9\times 9$$ grids of histograms of varying numbers of bins to see which ones seemed to suit this variable the best. Factors for determining whether the number of bins is suitable for a histogram include: the bins followed well the general curve of the K.D.E., there are no spaces between bins, no random shapes due to a certain bin interval containing a spike in number of cases, etc. In truth, there’s no correct answer and so it’s up to the researcher to determine which number of bins are suitable and which poorly represent the underlying distribution. To be fair, it’s possible for several different number of bins to be equally suitable for the histogram. Furthermore, it’s possible that some “irregular” histograms are also worth investigating, because of the possibility that they uncover hidden characteristics that other histograms may overlook. In this case, with 32 bins, the histogram seemed to fit well enough to the K.D.E. curve without appearing to exaggerate abnormal features.
 
-```
+```R
 ### Age variable
 par(mfrow = c(3,3)) # Try different 'm' bins
 m_vec <- round(seq(25, 40, length.out = 9))
@@ -832,7 +832,7 @@ The next step is to analyze some bandwidths by using the methods of cross-valida
 In the first case with pseudo-likelihood, the result was that R would fail to give a useful result since the output would become $$0$$. The pseudo-likelihood method requires that the product of all $$n$$ cross-validation results (i.e., $$\hat{f}_{-i}(X_i)$$) be multiplied together. In this case, each of the individual cross-validation results were decimal values between $$0$$ and $$1$$. With over $$700$$ observations, the product of them together is too small and so R simply outputs $$0$$. This occurred with a wide range of different bandwidths that were tested. The result can be seen below in Figure 15.
 
 
-```
+```R
 ### Cross-Validation
 ### Fig. 15
 # Calculate the Silverman and Sheather-Jones bandwidths for test
@@ -883,7 +883,7 @@ In the other case with UCV, a closed-form solution was found for $$R(\hat{f})$$ 
 
 As a note, in both cases, Silverman’s method and Sheather-Jones method (using the {locfit} package) were first calculated to find a general idea of what a suitable bandwidth could be for the problem. Then from these starting bandwidths, different bandwidths within a range (e.g., $$\pm 2$$ ) were tried. Furthermore, bandwidths that are negative don’t make sense since there can’t be a negative length, and bandwidths that are too large don’t produce useful K.D.E.’s.
 
-```
+```R
 ### Fig. 16
 ### The UCV function calculates the unbiased cross-validation
 ### value for a variable given a bandwidth. It calculates the
@@ -988,7 +988,7 @@ The graph on the right-hand side shows the reference Normal kernel and the Trian
 
 In Figure 14, it may have seemed possible that the underlying distribution was a simple skewed distribution that lacked anything of interest to a research (other than the skew itself). However, breaking down the histogram into a larger number of bins and applying different K.D.E. curves shows that there’s a possibility that the variable contains a more complex underlying distribution. The K.D.E. curves seem to imply that around $$40$$ years of age that there could be an alternate hump in the density that is possibly of interest to the researchers studying diabetes. In this example, it’s evident that K.D.E. is a powerful tool when perform exploratory data analysis such that it can allow researchers to discover underlying traits to the data that could easily have been missed when just using the conventional method of applying a histogram and moving on. In this case, K.D.E. is a second tool to double-check with greater certainty the
 
-```
+```R
 ### Fig. 17
 # Sheather-Jones / Silverman
 silverman_age <- silverman(x = diabetes$Age) # 3.298613
@@ -1129,7 +1129,7 @@ dev.off()
 ### 7. Determine a suitable bandwidth and kernel function combination for a variable.
 Considering that they all performed relatively similar, except for the Uniform kernel, it makes sense to choose the Normal kernel with the Sheather-Jones bandwidth. Just for further comparison, the Normal kernel is again graphed with the Sheather-Jones, Silverman, and Terrell bandwidths together (Figure 18). The Silverman and Terrell are close together and are possibly oversmoothing the K.D.E. curve. They smooth through the hump around $$40$$ years of age and seem to imply that the true density of the Age variable is a simple skewed distribution without any special characteristics.
 
-```
+```R
 ### Fig. 18
 # Plot Normal + different bandwidths
 hist_est(var1 = diabetes$Age, m = 32, line_color = 'gray',
@@ -1155,7 +1155,7 @@ dev.off()
 To do a quick exploration of the possible impact of this hump around $$40$$ years of age, a quick graph (Figure 19) is done for those that have diabetes (positive) and those that don’t have diabetes (negative). Looking again at the area of $$40$$ years, there’s clearly a larger peak around that are for observations that have diabetes. Also, the skew is much less sharp for those that have diabetes. This could imply that people who are older are much more likely to have or develop diabetes. Specifically, diabetes becomes prevalent around the mid-twenties to early forties for Pima Indian women. Information such as this could spur researchers to do further clinical investigation to better understand the underlying causes of diabetes. Age itself doesn’t seem like a strong indicator, but with age comes factors such as deteriorating health and lifestyle changes that are more likely reasons that observations have diabetes.
 
 
-```
+```R
 ### Fig. 19
 # Explore difference
 # can try to overlap KDE for the two groups
@@ -1181,7 +1181,7 @@ The second dataset is another dataset that was found from Kaggle, but it also fr
 A similar task will be done as with the previous dataset. A single variable will be chosen and analyzed through the “pipeline” process. Of course, for a researcher analyzing the dataset, it’d be productive to analyze all the variables. However, due to time constraints only one variable will be thoroughly examined. Based on Figure 20, the chosen variable is ‘volatile acidity.’ The reason is that based off the default histogram and K.D.E. curve, it seems that there’s an interesting bimodal appearance to the K.D.E. while the histogram itself shows a unimodal distribution. Therefore, this variable will be investigated to understand greater detail.
 
 
-```
+```R
 ### Dataset 1: Diabetes
 wine <- read.csv('winequality-red.csv') # Load data
 
@@ -1226,7 +1226,7 @@ The same technique is used here as before with the diabetes dataset. The methodo
 Below in Figure 21 shows the default histogram/K.D.E. combination on the left and the chosen histogram on the right-hand side. In this case, $$m=30$$ bins are chosen since it seems to express the bimodal distribution well without appearing strange or using too many bins. In this side-by-side comparison, it’s quite apparent how a researcher who isn’t careful could miss the fact that by using a different number of bins, the underlying distribution of the variable can change from a skewed unimodal distribution to a skewed bimodal distribution. At this point, it’s still not obvious what the implications could be, but further modeling will be done to try and see if there’s a better fit for the kernel function and bandwidth combination.
 
 
-```
+```R
 ### Fig. 21
 par(mfrow = c(3,3)) # Try different 'm' bins
 m_vec <- round(seq(10, 30, length.out = 9))
@@ -1257,7 +1257,7 @@ dev.off()
 The first method of pseudo-likelihood shows issues again as it did in the previous dataset. Before the results were such that the only output was $$0$$. This time, the results are somewhat different. Below in Figure 22, it shows that bandwidths with a length of around $$0.05$$ will increase the pseudo-likelihood while bandwidths with a length of around $$-0.05$$ lead to a negative pseudo-likelihood. Everywhere else the value for the pseudo-likelihood is negative. These results are not useful in that since the goal is to minimize the value of the pseudo-likelihood, the minimum occurs at a negative bandwidth. Furthermore, values of $$0$$ aren’t useful since there are many bandwidths that can give such a result. The only non-zero pseudo-likelihoods are found in a spike around $$0.05$$. However, since the goal is to minimize rather than maximize the pseudo-likelihood, this also isn’t helpful.
 
 
-```
+```R
 ### Fig. 22
 # Calculate Silverman/Sheather-Jones for cross-validation
 silverman_volatile_acid <- silverman(x = wine$volatile.acidity)
@@ -1283,7 +1283,7 @@ dev.off()
 
 Regarding the method of UCV, this time the method was able to determine useful results. The goal is to find the optimal bandwidth by minimizing the UCV. In Figure 23 below, on the left-hand side, it’s possible to see that for bandwidths close to $$0$$, the UCV will become much smaller. The bandwidth that minimized the UCV is $$0.04303562$$. The resulting value for UCV caused by this bandwidth is $$-1.642159$$. On the right-hand side is the resulting histogram with $$m=30$$ bins overlaid with the K.D.E. curve that consists of the UCV bandwidth and the Normal kernel. The appearance is such that the K.D.E. oversmooths the data so that it fails to highlight that bimodal distribution that is trying to be emphasized. This oversmoothing corresponds to what’s expected based off the empirical results that are mentioned in the textbook.
 
-```
+```R
 ### Fig. 23
 # UCV
 ucv_seq_vol_a <- seq(sheather_jones_vol_acid - 0.5,
@@ -1353,7 +1353,7 @@ Below in Figure 24 are two histograms showing the results of the kernels and ban
 From these results, it can be said that the K.D.E. curve does seem to signify that the volatile acidity expresses a distribution that is different than what was seen before in the original histogram where the discrete bins seemed to only indicate a unimodal distribution that was skewed. In the histograms below, it seems that there could be an underlying bimodal or other type of multimodal distribution. In fact, it seems that there could be three peaks that make up the original single ‘hump.’ It’s possible that with further histogram modelling where the number of bins is increased that the three peaks seen below would also be evident in the discrete bins.
 
 
-```
+```R
 ### Fig. 24
 # Calculate Sheather-Jones used Monte Carlo Integration
 silverman_volatile_acid <- silverman(x = wine$volatile.acidity) # 0.04337265
@@ -1466,7 +1466,7 @@ dev.off()
 Like in the previous dataset, all the kernel and bandwidths fit quite closely to the Normal kernel with the Sheather-Jones bandwidth obtained through Monte Carlo Integration, except for the Uniform kernel. Therefore, the chosen kernel and bandwidth combination will be the standard Normal kernel and the recommended Sheather-Jones bandwidth. Below in Figure 27 is a histogram with $$m=30$$ bins and K.D.E. curves using a Normal kernel for three different bandwidths. The bandwidths are the Sheather-Jones bandwidth (using Monte Carlo Integration), Silverman’s method bandwidth, and maximal smoothing principle bandwidth. As expected, the latter two bandwidths will create a smoother curve while Sheather-Jones produces a curve that tries to fit the histogram closer. In this case, Silverman and Terrell’s bandwidths don’t oversmooth it to the extent that the bimodal characteristic disappears. Also, Sheather-Jones possibly oversmooths it to the point that a third peak is seen. To determine what the case maybe, it would require further investigation of the data and its properties in a manner that won’t be covered in the project.
 
 
-```
+```R
 ### Fig. 25
 # Plot final choice of kernel/bandwidth with Silverman and Terrell
 hist_est(var1 = wine$volatile.acidity, m = 30, line_color = 'gray',
@@ -1495,7 +1495,7 @@ dev.off()
 
 To look at what sort of inference is possible at this stage, below in Figure 26 the data is split into two groups, good wine, and bad wine. Good wine is considered any wine with a quality rating of seven or higher. Bad wine is considered wine with a quality of less than seven. This is an arbitrary distinction as I am not a wine expert. The distinction is based on just a rough guess at how the rating system works since no details are given in the dataset. Interestingly, looking at the K.D.E. curve it seems that good wine possibly exists on the left peak while bad wine tends to be on the right peak. In other words, good wine tends to have lower levels of acetic acid while bad wine tends to have more of it. To fully explore the possibilities would require researching deeper the variable itself, but this exploratory data analysis approach shows that a valid distinction can be made between good wines and bad wines regarding this variable. Previously, it had seemed to have a unimodal distribution and so all the data could be lumped together. However, upon using K.D.E. it seems that the variable has a special characteristic of being multimodal that possibly allows it to be split into good and bad wine groups.
 
-```
+```R
 ### Fig. 26
 # Explore difference
 # can try to overlap KDE for the two groups
@@ -1560,7 +1560,7 @@ The takeaway then is that there's a viable alternative to simply plotting standa
 
 
 ## 2. Code Appendix
-```
+```R
 ### Jared Yu
 ### Computational Statistics
 ### Project

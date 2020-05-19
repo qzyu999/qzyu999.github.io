@@ -10,6 +10,12 @@ github:
   title: 'GitHub'
   fa-icon: 'fa-github-square fa-2x'
 
+kaggle:
+  id: 'yuqizheng'
+  href: 'https://www.kaggle.com/'
+  title: 'Kaggle'
+  fa-icon: 'fab fa-kaggle fa-2x'
+
 linkedin:
   id: 'jaredvyu'
   href: 'https://www.linkedin.com/in/'
