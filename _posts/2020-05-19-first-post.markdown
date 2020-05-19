@@ -2,10 +2,10 @@
 layout: post
 title:  "First Post"
 date:   2020-05-19
-#categories: jekyll update
+excerpt: First post of the blog. Recent happenings and what this GitHub page aims to be about.
 ---
 # First Post
-
+## 2020-05-19
 This is the first post for my GitHub page. This is my second time trying to make a suitable GitHub page. The first time I tried it, it was largely through copying some other template. The process was quite draining, since in order to produce some desired result it required an extensive search through the Jekyll format without much knowledge of how it works. Recently, I have just completed my second semester of my master's program in data science at JHU and afterwards I immediately took three courses on Git and GitHub from Team Treehouse. The knowledge enriched my understanding of how both Git and GitHub can be useful for anyone interested in a career involving programming.
 
 I decided then to recreate the GitHub page into a useful format that was different from what was done before. This version is much simpler and the design starts from a much more plain theme with me adding additional features in a way where there's a better understanding of what's going on. The goal of this GitHub page then is to serve as a platform where I can update it with occasional blog posts, upload my portfolio of projects, and to complete my goal of producing an archive of the knowldge that I gain through the years of academic study.
