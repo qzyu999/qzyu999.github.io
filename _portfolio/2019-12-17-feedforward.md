@@ -2,12 +2,12 @@
 layout: default
 name: Feedforward Neural Network
 date: 2019-12-17
-context: Algorithms for Data Science, JHU
+context: Tutorial
 toc: true
 toc_sticky: true
 toc_label: "Table of Contents"
 toc_icon: "cog"
-excerpt_separator: The final project for the Computational Statistics course at JHU in Spring '20. The topic is to give deeper details and explore examples of Kernel Density Estimation (KDE).
+excerpt_separator: This project aimed to clarify the concept of feedforward neural networks from a mathematical and programming perspective. It utlizes notation derived from experience learning about multiple linear regression to explain the concept in a simplified form utlizing matrices.
 ---
 # Motivation
 This document is based primarily on the presentation of feedforward networks in *Pattern Recognition and Machine Learning* by Christopher M. Bishop and an object-oriented design from [David Selby](https://selbydavid.com/2018/01/09/neural-network/) who likewise was inspired by Denny Britz. In an algorithms course for my M.S. in Data Science, I was able to successfully program a variety of different algorithms but became frustrated with progress on the feedforward neural network. In the end, I only submitted a solution to the assignment utilizing a neural network package’s function.
@@ -56,7 +56,7 @@ If you think about other statistical algorithms, they are often based on some so
 
 So the effect is that we utilize [math formulas](https://www.researchgate.net/figure/Biological-Neuron-and-Artificial-Neural-Network_fig1_264149447) that are mimic the [basic structure](https://biology.stackexchange.com/questions/22011/neurons-with-thousands-of-connections-where-are-the-extra-connections-coming-fr) of the neuron. I tried to create a diagram of what will be explained further below in our two-layer neural network. The two-layers refer to the two weight matrices, but in the deep learning community there is various jargon for this and so it can be called other names. The diagram itself refers to the formula of the feedforward process for the first observation, $$\textbf{x}_1^{\top} = [x_{1,1}, x_{1,2}, \cdots,x_{1,D}]$$.
 
-![Neural network diagram.]({{"/images/neural_network_diagram.jpg" | absolute_url}})
+![Neural network diagram.]({{"/assets/img/neural_network_diagram.jpg" | absolute_url}})
 
 At this stage, the math and notation likely doesn't make sense which is expected. To me, they were nonintuitive at first despite their apparent simplicity. In later paragraphs I will try to break down the formula into simple to understand matrix representations so that from a programming perspective, it will become much clearer what we are trying to implement.
 
@@ -122,7 +122,7 @@ As a note, here we will focus on classification, so ultimately, for each observa
 
 ### 4.1.1 First Layer
 <a id="first-layer"></a>
- <a href="#top">Back to top</a>
+<a href="#top">Back to top</a>
 
 The analogy of layers will be elaborated on as follows. Let’s call the portion inside $$h(\cdot)$$ as an activation, denoted by $$a_{n,j}^{[1]}$$,using a $$j$$ subscript for the first layer’s activation. While $$h(\cdot)$$ will be considered the activation function for the first layer. So, $$a_{n,j}^{[1]}$$, the $$j'th$$ activation of the $$n'th$$ observation in the first layer, can be written as,
 

@@ -10,7 +10,8 @@ permalink: /portfolio/
 ## Featured Projects
 
 ## Latest Projects
-{% for project in site.portfolio %}
+{% assign sorted = site.portfolio | reverse %}
+{% for project in sorted %}
   <h2>
     <a href="{{ project.url }}">
       {{ project.name }} - {{ project.context }}
