@@ -8,7 +8,8 @@ permalink: /portfolio/
 # Portfolio
 
 ## Featured Projects
-{% for project in site.featured_portfolio %}
+{% assign sorted_pages = site.featured_portfolio | sort:"order" %}
+{% for project in sorted_pages %}
   <h2>
     <a href="{{ project.url }}">
       {{ project.name }} - {{ project.context }}

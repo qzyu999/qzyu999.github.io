@@ -41,10 +41,6 @@ collections:
     output: true
     sort_by: date
   featured_portfolio:
-    order:
-      - featured_portfolio/2019-12-17-feedforward.md
-      - featured_portfolio/2020-05-19-kde.md
-      - featured_portfolio/2018-12-sf-fire.md
     output: true
 
 # Exclude from processing.

@@ -8,6 +8,7 @@ toc_sticky: true
 toc_label: "Table of Contents"
 toc_icon: "cog"
 excerpt_separator: This project aimed to clarify the concept of feedforward neural networks from a mathematical and programming perspective. It utlizes notation derived from experience learning about multiple linear regression to explain the concept in a simplified form utlizing matrices.
+order: 1
 ---
 # Motivation
 This document is based primarily on the presentation of feedforward networks in *Pattern Recognition and Machine Learning* by Christopher M. Bishop and an object-oriented design from [David Selby](https://selbydavid.com/2018/01/09/neural-network/) who likewise was inspired by Denny Britz. In an algorithms course for my M.S. in Data Science, I was able to successfully program a variety of different algorithms but became frustrated with progress on the feedforward neural network. In the end, I only submitted a solution to the assignment utilizing a neural network package’s function.
