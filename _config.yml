@@ -37,10 +37,10 @@ plugins:
 include: ['_pages'] # Reference: https://zeph.co/jekyll-pages-directory
 
 collections:
-  portfolio:
+  staff_members:
+    people: true
     output: true
-    collections_dir: my_collections
-    #permalink: /:collection/:path/
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
