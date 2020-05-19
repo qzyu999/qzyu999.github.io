@@ -10,6 +10,12 @@ github:
   title: 'GitHub'
   fa-icon: 'fa-github-square fa-2x'
 
+#kaggle:
+#  id: 'yuqizheng'
+#  href: 'https://www.kaggle.com/'
+#  title: 'kaggle'
+#  fa-icon: 'fa-kaggle fa-2x'
+
 linkedin:
   id: 'jaredvyu'
   href: 'https://www.linkedin.com/in/'
@@ -28,29 +34,11 @@ twitter:
   title: 'Twitter'
   fa-icon: 'fa-twitter-square fa-2x'
 
-googleplus:
-  id:
-  href: 'https://plus.google.com/'
-  title: 'Google+'
-  fa-icon: 'fa-google-plus-square fa-2x'
-
 instagram:
   id: 'yqz09'
   href: 'https://instagram.com/'
   title: 'Instagram'
   fa-icon: 'fa-instagram fa-2x'
-
-stackoverflow:
-  id:
-  href: 'http://stackoverflow.com/'
-  title: 'StackOverflow'
-  fa-icon: 'fa-stack-overflow fa-2x'
-
-youtube:
-  id:
-  href: 'https://youtube.com/'
-  title: 'YouTube'
-  fa-icon: 'fa-youtube fa-2x'
 
 website:
   id: ''
