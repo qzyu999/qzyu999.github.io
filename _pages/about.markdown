@@ -6,7 +6,11 @@ permalink: /about/
 # Reference: https://www.thebalancecareers.com/how-to-write-about-me-page-examples-4142367
 ---
 # About
-
+<figure>
+  <div style="text-align: center"><img src="/assets/img/self-photo2.png"/></div>
+  <div style="text-align: center"><p class="text-small text-grey-dk-000 mb-4">Jared outside of Peter Shield's library at the University of California, Davis. Image edited using neural style transfer.</p></div>
+</figure>
+<br>
 Jared Yu is a graduate student studying for an online M.S. in Data Science at Johns Hopkins University. His background is a B.S. in Statistics from the University of California, Davis. The expected date of graduation is around May 2021.
 
 Jared is driven to discover the insights into problems that are important for them to be solved. By working hard to break problems down into their component pieces, it becomes possible for him to gain enough clarity to the point that a vision of the solution can begin to appear. This difficult struggle to know why a problem exists and how it can be fixed is what brings joy and satisfaction to his work.
