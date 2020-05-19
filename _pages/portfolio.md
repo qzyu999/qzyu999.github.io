@@ -8,6 +8,14 @@ permalink: /portfolio/
 # Portfolio
 
 ## Featured Projects
+{% for project in site.featured_portfolio %}
+  <h2>
+    <a href="{{ project.url }}">
+      {{ project.name }} - {{ project.context }}
+    </a>
+  </h2>
+  <p>{{ project.excerpt_separator | markdownify }}</p>
+{% endfor %}
 
 ## Latest Projects
 {% assign sorted = site.portfolio | reverse %}
