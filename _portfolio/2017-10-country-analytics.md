@@ -9,7 +9,7 @@ toc_label: "Table of Contents"
 toc_icon: "cog"
 excerpt_separator: The first project for the Regression Analysis (STA 108) course, utilizing linear regression.
 #teaser: /assets/img/plots_health_proj.JPG
-#gallery:
+gallery:
   - url: /assets/img/sta_108_proj_1_img_1.JPG
     image_path: /assets/img/sta_108_proj_1_img_1.JPG
     alt: "Fitted line through the predictor and response variables along with confidence intervals."
