@@ -3,10 +3,6 @@ layout: default
 name: Nutrition Analysis
 date: 2019-06-10
 context: Multivariate Data Analysis, UCD
-toc: true
-toc_sticky: true
-toc_label: "Table of Contents"
-toc_icon: "cog"
 excerpt_separator: The final project for the Multivariate Data Analysis (STA 135) course, utilizing principal component analysis (PCA) and linear discriminant analysis (LDA).
 #header:
 #  teaser: /assets/img/lda_plot_nut_proj.JPG
