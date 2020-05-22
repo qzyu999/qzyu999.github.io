@@ -19,9 +19,10 @@ excerpt_separator: The first project for the Regression Analysis (STA 108) cours
 #  - url: /assets/img/coef_health_proj.JPG
 #    image_path: /assets/img/coef_health_proj.JPG
 #    alt: "Resulting prediction of coefficients."
+# {% include gallery caption="Plots from the project include (1) exploratory plots to visualize the data with transformations, (2) analysis of different residuals, (3) resulting prediction of coefficients." %}
 ---
-This was the first project for Linear Regression (STA 108) with Prof. Chen at the University of California, Davis. A set of data which had an $x$ and $$y$$ variable which corresponded with country GDP per person plotted against the fertility rate for that country was given. The goal was to find the best way to transform the data such that it could obtain an ideal R² value. Despite the ideal transformation appearing to be the log of both the x and y plotted against each other, it was later understood that the best possible R² could be found using only 1/log(x) against the untransformed y data.
+# Country Fertility and PPgdp Analytics
+
+This was the first project for Linear Regression (STA 108) with Prof. Chen at the University of California, Davis. A set of data which had an $$x$$ and $$y$$ variable which corresponded with country GDP per person plotted against the fertility rate for that country was given. The goal was to find the best way to transform the data such that it could obtain an ideal $$R^2$$ value. Despite the ideal transformation appearing to be the log of both the $$x$$ and $$y$$ plotted against each other, it was later understood that the best possible $$R^2$$ could be found using only $$1/log(x)$$ against the untransformed $$y$$ data.
 
 After transforming the data, it was possible to reattempt the regression analysis on the changed version of the data, allowing for confidence intervals to be developed and retested back on the original data.
-
-# {% include gallery caption="Plots from the project include (1) exploratory plots to visualize the data with transformations, (2) analysis of different residuals, (3) resulting prediction of coefficients." %}
