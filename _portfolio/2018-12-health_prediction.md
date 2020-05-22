@@ -1,7 +1,7 @@
 ---
 layout: default
 name: Low Birthweight and Heart Disease Prediction Analytics
-date: 2018-12-17
+date: 2019-12-17
 context: Analysis of Categorical Data, UCD
 toc: true
 toc_sticky: true
