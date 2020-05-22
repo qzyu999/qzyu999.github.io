@@ -1,13 +1,9 @@
 ---
 layout: default
-name: USA Spending Data Analytics for Business Owners
-date: 2019-03-10
-context: Adv. Stat Computing, UCD
-toc: true
-toc_sticky: true
-toc_label: "Table of Contents"
-toc_icon: "cog"
-excerpt_separator: The final group project for the Adv. Stat Computing (STA 141C) course, utilizing big data.
+name: Image Recognition Machine Learning/k-NN/Cross Validation
+date: 2018-05-10
+context: Statistical Data Science, UCD
+excerpt_separator: The final group project for the Statistical Data Science (STA 141A) course, utilizing machine learning for image recognition.
 #header:
 #  teaser: /assets/img/lda_plot_nut_proj.JPG
 gallery:
