@@ -1,7 +1,7 @@
 ---
 layout: default
 name: China Gapminder Data Analysis
-date: 2020-05-10
+date: 2019-11-10
 context: Statistical Methods, Data Analysis, JHU
 excerpt_separator: The final project for the Statistical Methods, Data Analysis (EN.625.603.85.FA19) course, utilizing data analysis methods to analyze China's Gapminder data.
 #header:
