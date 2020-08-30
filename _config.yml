@@ -29,7 +29,8 @@ github_username:  qzyu999
 
 # Build settings
 # theme: minima
-remote_theme: pmarsceill/just-the-docs
+# remote_theme: pmarsceill/just-the-docs outdated version causes crashes
+remote_theme: pmarsceill/just-the-docs@v0.2.8
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
