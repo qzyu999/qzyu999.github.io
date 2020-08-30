@@ -1,7 +1,7 @@
 ---
 layout: default
 name: Creating Data Science Web Apps
-date: 2020-05-10
+date: 2020-08-29
 context: Data Science, App Development
 excerpt_separator: A brief guide on creating a web app for a data science project.
 #header:
