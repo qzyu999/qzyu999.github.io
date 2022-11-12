@@ -40,11 +40,11 @@ instagram:
   title: 'Instagram'
   fa-icon: 'fa fa-instagram fa-2x'
 
-website:
-  id: ''
-  href: 'https://yuqizheng.com/'
-  title: 'Website'
-  fa-icon: 'fab fa-wordpress-simple fa-2x'
+#website:
+#  id: ''
+#  href: 'https://yuqizheng.com/'
+#  title: 'Website'
+#  fa-icon: 'fab fa-wordpress-simple fa-2x'
 
 rss:
   id: '/feed.xml'
