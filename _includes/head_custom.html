@@ -1,0 +1,90 @@
+<style>
+  /* Move sidebar to the left and make it compact/minimal */
+  @media (min-width: 50rem) {
+    .side-bar {
+      width: 200px !important;
+      min-width: 200px !important;
+      max-width: 200px !important;
+      align-items: stretch !important;
+    }
+
+    .site-header,
+    .navigation,
+    .site-footer {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .site-title {
+      padding-left: 1.25rem !important;
+      padding-right: 1.25rem !important;
+      font-size: 1.25rem !important;
+    }
+
+    .navigation {
+      padding-top: 1.5rem !important;
+      padding-bottom: 1rem !important;
+      padding-left: 1.25rem !important;
+      padding-right: 1.25rem !important;
+    }
+
+    .site-footer {
+      padding-top: 1rem !important;
+      padding-bottom: 1rem !important;
+      padding-left: 1.25rem !important;
+      padding-right: 1.25rem !important;
+    }
+
+    .main-content {
+      margin-left: 200px !important;
+      max-width: 960px !important;
+    }
+  }
+
+  @media (min-width: 66.5rem) {
+    .side-bar {
+      width: 200px !important;
+      min-width: 200px !important;
+      max-width: 200px !important;
+    }
+
+    .navigation,
+    .site-header,
+    .site-footer {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .main-content {
+      margin-left: 200px !important;
+    }
+  }
+
+  /* Compact styling for social media icons in minimal sidebar */
+  #social-media {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.25rem;
+  }
+
+  #social-media a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #7253ed;
+    opacity: 0.85;
+    transition: opacity 0.2s, color 0.2s, transform 0.2s;
+  }
+
+  #social-media a:hover {
+    opacity: 1;
+    color: #502bd8;
+    transform: translateY(-1px);
+  }
+
+  #social-media .fa-2x {
+    font-size: 1.35rem;
+  }
+</style>
