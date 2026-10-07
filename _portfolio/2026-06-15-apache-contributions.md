@@ -2,19 +2,19 @@
 layout: default
 name: Apache Software Foundation Contributions
 date: 2026-06-15
-context: Open Source Software (Arrow, Fluss, Iceberg)
+context: Open Source & Distributed Systems (Arrow, Fluss, Iceberg, Airflow)
 toc: true
 toc_sticky: true
 toc_label: "Table of Contents"
 toc_icon: "cog"
-excerpt_separator: Core open-source contributions across Apache Arrow (Parquet Variant encoding & Go fixes), Apache Fluss (stream storage, compacted rows, and async Python bindings), and Apache Iceberg (table compaction and metadata replace APIs).
+excerpt_separator: Core contributions across Apache Arrow (Parquet Variant encoding & Go fixes), Apache Fluss (stream storage & async Python bindings), Apache Iceberg (table compaction & metadata replace APIs), and internal Apache Airflow Kubernetes infrastructure at Apple.
 ---
 
 # Apache Software Foundation Contributions
 
-Modern data systems require seamless interoperability between in-memory processing, real-time streaming ingestion, and persistent columnar storage formats. Over the past several years, I have actively contributed to core projects within the **Apache Software Foundation (ASF)** ecosystem, focusing on low-level serialization layouts, high-throughput streaming storage, and multi-language client runtimes across **Apache Arrow**, **Apache Fluss**, and **Apache Iceberg**.
+Modern data systems require seamless interoperability between in-memory processing, real-time streaming ingestion, persistent columnar storage formats, and distributed workflow orchestration. Over the past several years, I have actively contributed to core projects within the **Apache Software Foundation (ASF)** ecosystem, focusing on low-level serialization layouts, high-throughput streaming storage, multi-language client runtimes, and enterprise orchestration platforms across **Apache Arrow**, **Apache Fluss**, **Apache Iceberg**, and **Apache Airflow**.
 
-Below is a technical breakdown of merged and active pull requests, architectural designs, and bug fixes across these distributed data systems.
+Below is a technical breakdown of merged and active pull requests, architectural designs, enterprise deployments, and bug fixes across these distributed data systems.
 
 ---
 
@@ -34,6 +34,7 @@ Below is a technical breakdown of merged and active pull requests, architectural
 | **apache/fluss-rust** | [PR #438](https://github.com/apache/fluss-rust/pull/438) | **Merged** | Streaming / Python | Implemented asynchronous iterator protocol (`async for`) on `LogScanner` for non-blocking event consumption. |
 | **apache/iceberg-python** | [PR #3131](https://github.com/apache/iceberg-python/pull/3131) | **Open** | Table Format / Python | Implemented metadata-only replace API on `Table` enabling atomic `REPLACE` snapshot operations. |
 | **apache/iceberg-python** | [PR #3124](https://github.com/apache/iceberg-python/pull/3124) | **Open** | Maintenance / Python | Added `table.maintenance.compact()` implementing full-table bin-packing data file compaction. |
+| **apache/airflow** | Internal (Apple) | **Production** | Orchestration / K8s | Architected, containerized, and shared a bootstrapped Kubernetes deployment implementation of Apache Airflow across Apple data teams. |
 | **scipy/scipy** | [PR #24733](https://github.com/scipy/scipy/pull/24733) | **Open** | Algorithms / Python | Contributed Sheather-Jones (SJ) solve-the-equation bandwidth selection algorithm to `scipy.stats.gaussian_kde`. |
 
 ---
@@ -149,6 +150,27 @@ print(f"Compacted {compaction_result.rewritten_files_count} files into {compacti
 ### 2. Metadata-Only Table Replacement API ([apache/iceberg-python#3131](https://github.com/apache/iceberg-python/pull/3131) - Open)
 * Added `table.replace_table()` API allowing users to perform atomic metadata replacements (`REPLACE` operations).
 * Enables updating schemas, partition specifications, table properties, and sort orders in an atomic transaction without re-writing existing physical data files.
+
+---
+
+# Apache Airflow: Enterprise Kubernetes Orchestration (Apple)
+
+[Apache Airflow](https://airflow.apache.org/) is the industry-standard open-source platform for authoring, scheduling, and monitoring complex programmatic workflows as Directed Acyclic Graphs (DAGs).
+
+During my tenure as a Data Engineer at **Apple**, our data platform ingested and transformed terabytes of lab hardware test instrumentation data and user telemetry. Existing monolithic Airflow deployments running on static virtual machines faced severe operational bottlenecks: worker queue head-of-line blocking during daytime batch cycles, substantial idle cloud costs during off-peak windows, and configuration drift across different sub-teams.
+
+### 1. Bootstrapped Kubernetes Architecture
+To address these infrastructure challenges, I architected, containerized, and shared a bootstrapped Kubernetes deployment implementation of Apache Airflow that became a standardized template adopted across sister data engineering teams at Apple:
+
+* **Dynamic Worker Autoscaling via `KubernetesExecutor`:** Configured Airflow's `KubernetesExecutor` to dynamically launch isolated, ephemeral worker pods per task instance. Each worker pod was scheduled with fine-grained CPU and memory resource requests/limits tailored to its specific task profile, terminating immediately upon execution completion. This eliminated permanent idle worker overhead and reduced compute time by **10+ hours per week**.
+* **Declarative Infrastructure as Code (Helm, Docker, Pulumi):** Packaged Airflow's core components (Webserver, Scheduler, Triggerer, and PostgreSQL metadata backend) into modular Helm charts and Pulumi infrastructure stacks, with automated TLS termination, enterprise OAuth/SSO integration, and hardened container base images.
+* **Zero-Downtime GitOps DAG Synchronization:** Deployed background `git-sync` sidecar containers that synchronized DAG definitions from enterprise GitHub repositories directly into running scheduler and worker pods in near real time, eliminating container rebuilds or cluster restarts for pipeline updates.
+* **Security, Secrets & Observability:** Implemented secure secrets management with dynamic credential injection for external data warehouses (Snowflake, Trino, S3), role-based access control (RBAC), and custom log forwarders routing task outputs to centralized monitoring dashboards.
+
+### 2. Mission-Critical Production Workloads
+* **Terabyte-Scale Lab Instrumentation ELT:** Powered mission-critical ELT pipelines ingesting terabytes of raw hardware lab measurements into Apache Iceberg and Snowflake for downstream engineering analysis.
+* **Automated Data Quality & Validation:** Integrated automated Write-Audit-Publish (WAP) validation checks using Great Expectations and custom anomaly detection routines, saving **6+ hours per week** of manual debugging.
+* **Executive & Operational Dashboards:** Orchestrated upstream transformations feeding high-visibility KPI and operational dashboards built in Streamlit, Plotly, and Tableau.
 
 ---
 

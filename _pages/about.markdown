@@ -13,7 +13,7 @@ permalink: /about/
 <br>
 Jared Yu is a Data Engineer currently building scalable data platforms, agentic AI pipelines, and lakehouse architectures at Boeing. Previously, he worked as a Data Engineer at Apple and held roles at Pacific Gas & Electric and Waymo. He holds an M.S. in Data Science (Honors) from Johns Hopkins University and a B.S. in Statistics from the University of California, Davis.
 
-In addition to enterprise data platforms, Jared is an active open-source contributor within the Apache Software Foundation ecosystem (Apache Arrow, Apache Fluss, Apache Iceberg) and creator of distributed systems and autonomous agent frameworks including Inference Exchange, ContainerClaw, and Lighthouse.
+In addition to enterprise data platforms, Jared is an active open-source contributor within the Apache Software Foundation ecosystem (Apache Arrow, Apache Fluss, Apache Iceberg, Apache Airflow) and creator of distributed systems and autonomous agent frameworks including Inference Exchange, ContainerClaw, and Lighthouse.
 
 Jared is driven to discover core insights within complex technical challenges. By breaking problems down into their foundational components, he bridges abstract mathematical theory with reliable, production-grade systems. This passion for clarity extends to teaching and knowledge sharing—from reinterpreting deep learning architectures through linear algebra to presenting intuitive closed-form derivations of Kernel Density Estimation (KDE).
 
